@@ -6,6 +6,7 @@ import {
   KeyboardAvoidingView,
   View,
   Text,
+  // StatusBar,
 } from 'react-native';
 
 import JitsiMeet, {JitsiMeetView} from 'react-native-jitsi-meet';
@@ -14,6 +15,7 @@ function App() {
   const [userName, setUserName] = useState('');
   const [callLink, setCallLink] = useState('');
   const [callStarted, setCallStarted] = useState(false);
+  // const [showJitsi, setShowJitsi] = useState(true);
 
   useEffect(() => {
     return () => {
@@ -29,6 +31,22 @@ function App() {
   function onConferenceJoined(nativeEvent) {
     /* Conference joined event */
     console.log('onConferenceJoined: ', {nativeEvent});
+
+    // setShowJitsi(false);
+    // setTimeout(() => {
+    //   setShowJitsi(true);
+    // }, 100);
+
+    // StatusBar.setHidden(false, 'none'); // don't remove
+    // StatusBar.setTranslucent(false); // don't remove
+    // StatusBar.setBackgroundColor('#000000'); // you can remove
+    // StatusBar.setBarStyle('light-content'); // you can remove
+    // setTimeout(() => {
+    //   StatusBar.setHidden(true, 'none'); // this might be false if you want to show statusbar
+    //   StatusBar.setTranslucent(true); // don't remove
+    //   StatusBar.setBackgroundColor('#000000'); // you can remove
+    //   StatusBar.setBarStyle('light-content'); // you can remove
+    // }, 100);
   }
 
   function onConferenceWillJoin(nativeEvent) {
@@ -47,7 +65,7 @@ function App() {
           avatar: 'https:/gravatar.com/avatar/abc123',
         };
         JitsiMeet.call(url, userInfo);
-      }, 1000);
+      }, 2000);
     }
   };
 
@@ -84,6 +102,7 @@ function App() {
       />
     );
   }
+  return null;
 }
 
 const styles = StyleSheet.create({
