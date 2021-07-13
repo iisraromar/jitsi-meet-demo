@@ -16,21 +16,6 @@ function App() {
   const [callStarted, setCallStarted] = useState(false);
 
   useEffect(() => {
-    // setTimeout(() => {
-    //   const url = 'https://video.circleit.com/stand-up';
-    //   // const url = 'https://192.168.0.110/test12';
-    //   const userInfo = {
-    //     displayName: 'User',
-    //     email: 'user@example.com',
-    //     avatar: 'https:/gravatar.com/avatar/abc123',
-    //   };
-    //   JitsiMeet.call(url, userInfo);
-    //   /* Você também pode usar o JitsiMeet.audioCall (url) para chamadas apenas de áudio */
-    //   /* Você pode terminar programaticamente a chamada com JitsiMeet.endCall () */
-    // }, 1000);
-  }, []);
-
-  useEffect(() => {
     return () => {
       JitsiMeet.endCall();
     };
